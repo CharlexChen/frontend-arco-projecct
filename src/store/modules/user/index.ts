@@ -65,10 +65,7 @@ const useUserStore = defineStore('user', {
     async login(loginForm: LoginData) {
       try {
         // const res = await userLogin(loginForm);
-        const res = await axios.post(
-          'http://localhost:5173/api/manager/login',
-          loginForm
-        );
+        const res = await axios.post('/api/manager/login', loginForm);
         if (res.error_code === 0) {
           setToken(res.data.token);
         } else {
